@@ -6,7 +6,8 @@ use App\Blog;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\DB;
+
+//use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -23,12 +24,21 @@ class BlogController extends Controller
     {
         list($Y, $m, $d) = Blog::parseYmd(request('date'));
         $data = array_merge(request()->all(), compact('Y', 'm', 'd'));
-        return Blog::create($data);
+        $blog = Blog::create($data);
+        return $blog;
     }
 
     public function all()
     {
-        $allBlog = Blog::all();
+        $allBlog = Blog::latest()->get();
+        Blog::addLink($allBlog);
         return $allBlog;
+    }
+
+    public function show($Y = null, $m = null, $d = null, $linktitle = null)
+    {
+        $blogs = Blog::Y($Y)->m($m)->d($d)->linktitle($linktitle)->latest()->get();
+        Blog::addLink($blogs);
+        return $blogs;
     }
 }

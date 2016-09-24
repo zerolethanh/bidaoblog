@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Blog;
+use App\Observers\BlogObservers;
+use App\Observers\UserObservers;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Log::info(static::random("DB::listen - ".__CLASS__));
+        Log::info(static::random("DB::listen - " . __CLASS__));
         DB::listen(function ($query) {
             $bindings = array_map(function ($val) {
                 return '"' . $val . '"';
@@ -24,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
             $query = str_replace_array('?', $bindings, $query->sql);
             Log::info($query);
         });
+
+//        User::observe(UserObservers::class);
+        Blog::observe(BlogObservers::class);
     }
 
     static function random($prefix)

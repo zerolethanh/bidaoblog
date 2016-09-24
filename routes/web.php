@@ -28,8 +28,10 @@ Route::group(['prefix' => 'homepage'], function () {
     Route::get('{view?}', 'HomePageController@view');
 });
 
+Route::get('blogs', 'BlogController@all');
 Route::group(['prefix' => 'blog'], function () {
     Route::get('write', 'BlogController@write');
     Route::post('save', 'BlogController@save');
     Route::get('all', 'BlogController@all');
+    Route::get('{Y?}/{m?}/{d?}/{title?}', 'BlogController@show');
 });

@@ -20,6 +20,7 @@ class CreateBlogsTable extends Migration
             $table->integer('d');
             $table->integer('date');
             $table->text('title');
+            $table->text('linktitle')->nullable();
             $table->text('body');
             $table->timestamps();
         });
