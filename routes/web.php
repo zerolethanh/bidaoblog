@@ -12,16 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return view('homepage.index');
 });
 
-Route::get('config',function(){
+
+Route::get('config', function () {
 //    return config()->all();
     return app()->version();
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::group(['prefix'=>'homepage'],function() {
-    Route::get('{view?}','HomePageController@view');
+Route::group(['prefix' => 'homepage'], function () {
+    Route::get('{view?}', 'HomePageController@view');
+});
+
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('write', 'BlogController@write');
+    Route::post('save', 'BlogController@save');
+    Route::get('all', 'BlogController@all');
 });
