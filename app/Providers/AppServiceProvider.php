@@ -20,22 +20,24 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Log::info(static::random("DB::listen - " . __CLASS__));
+        Log::info(static::random(request()->fullUrl()));
         DB::listen(function ($query) {
             $bindings = array_map(function ($val) {
                 return '"' . $val . '"';
             }, $query->bindings);
-            $query = str_replace_array('?', $bindings, $query->sql);
-            Log::info($query);
+            $sql = str_replace_array('?', $bindings, $query->sql);
+//            $time = round($query->time, 3);
+            $time = $query->time;
+            Log::info(compact('sql', 'time'));
         });
 
 //        User::observe(UserObservers::class);
         Blog::observe(BlogObservers::class);
     }
 
-    static function random($prefix)
+    static function random($prefix = null)
     {
-        return $prefix . str_repeat('-', 20) . Str::random(20);
+        return str_repeat('-', 20) . ($prefix ?? '');//. Str::random(20);
     }
 
 

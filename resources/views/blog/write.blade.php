@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8" style="background-color: #98cbe8  ">
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/blog/save') }}">
                     {{ csrf_field() }}
 
@@ -30,13 +30,20 @@
                         <label for="body" class="control-label col-md-2">Says</label>
                         <div class="col-md-8">
                             <textarea name="body" id="body" cols="30" rows="10" class="form-control"
-                                      required></textarea>
+                                      required>{{old('body')}}</textarea>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary col-md-offset-2">SAVE</button>
                 </form>
             </div>
+            <div class="col-md-4">
+                @include('blog.particals.bloglist')
+            </div>
+
         </div>
     </div>
+
+    {{--@include('commons.disqus')--}}
 @endsection
+

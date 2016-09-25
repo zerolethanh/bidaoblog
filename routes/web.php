@@ -35,3 +35,12 @@ Route::group(['prefix' => 'blog'], function () {
     Route::get('all', 'BlogController@all');
     Route::get('{Y?}/{m?}/{d?}/{title?}', 'BlogController@show');
 });
+
+Route::group(['prefix' => 'vn'], function () {
+    Route::get('/', 'VnController@index');
+
+});
+Route::group(['prefix' => 'jp'], function () {
+    Route::get('/', 'JpController@index');
+
+});

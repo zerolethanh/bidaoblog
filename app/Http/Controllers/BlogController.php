@@ -24,21 +24,39 @@ class BlogController extends Controller
     {
         list($Y, $m, $d) = Blog::parseYmd(request('date'));
         $data = array_merge(request()->all(), compact('Y', 'm', 'd'));
-        $blog = Blog::create($data);
-        return $blog;
+        Blog::create($data);
+        return back();
     }
 
     public function all()
     {
-        $allBlog = Blog::latest()->get();
-        Blog::addLink($allBlog);
-        return $allBlog;
+
+        $blogs = \App\Blog::latest()
+            ->simplePaginate();
+
+//        dd($blogs);
+        return view('blog.all', compact('blogs'));
     }
 
     public function show($Y = null, $m = null, $d = null, $linktitle = null)
     {
-        $blogs = Blog::Y($Y)->m($m)->d($d)->linktitle($linktitle)->latest()->get();
-        Blog::addLink($blogs);
-        return $blogs;
+
+        if ($id = request('id')) {
+            $blog = Blog::find($id);
+        }
+        return view('blog.show2', compact('blog'));
+//        else {
+//
+//            $blogs = Blog::Y($Y)->m($m)->d($d)->linktitle($linktitle)
+//                ->latest();
+//
+//            if (isset($linktitle)) {
+//                $blogs = $blogs->get();
+//            } else {
+//                $blogs = $blogs->simplePaginate();
+//            }
+//            Blog::addLink($blogs);
+//            return $blogs;
+//        }
     }
 }

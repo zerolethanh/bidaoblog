@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     //
-    protected $fillable = ['Y', 'm', 'd', 'date', 'title', 'linktitle', 'body'];
+    protected $fillable = ['Y', 'm', 'd', 'date', 'title', 'body'];
     protected $hidden = ['linktitle'];
 
     public static function parseYmd($date)
@@ -42,16 +42,31 @@ class Blog extends Model
         return $linktitle ? $q->where('linktitle', $linktitle) : $q;
     }
 
-    static public function addLink($blogs)
+    static public function addLink(&$blogs)
     {
         foreach ($blogs as $blog) {
-            $blog['link'] = url("blog/{$blog['Y']}/{$blog['m']}/{$blog['d']}/{$blog['linktitle']}");
+            $blog['link'] = url("blog/{$blog['Y']}/{$blog['m']}/{$blog['d']}/" . $blog->linktitle . "?id={$blog['id']}");
         }
         return $blogs;
     }
 
-    public function makeLinkTitle()
+    public function getLinkAttribute()
     {
-        $this->linktitle = str_replace(' ', '-', $this->title);
+        return url("blog/{$this['Y']}/{$this['m']}/{$this['d']}/" . $this->linktitle . "?id={$this['id']}");
+    }
+
+//    public function makeLinkTitle()
+//    {
+//        $this->linktitle = $this->linktitle();
+//    }
+//
+//    public function linktitle()
+//    {
+//        return str_replace([' ', '/', '?', '=', '&', '\\'], '-', $this->title); // Replaces all spaces with hyphens.
+//    }
+
+    public function getLinktitleAttribute()
+    {
+        return str_replace([' ', '/', '?', '=', '&', '\\'], '-', $this->title); // Replaces all spaces with hyphens.
     }
 }

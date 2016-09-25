@@ -23,7 +23,7 @@ class BlogObservers
 //    }
     public function saving(Blog $blog)
     {
-        $blog->makeLinkTitle();
+//        $blog->makeLinkTitle();
     }
 
     public function creating(Blog $blog)

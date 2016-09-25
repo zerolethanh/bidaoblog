@@ -13,16 +13,11 @@
 
     <!-- Styles -->
     @include('commons.css.bootstrap')
+    <link rel="stylesheet" href="{{ url('/blog/blog.css') }}">
 
-    @yield('ex-css')
+@yield('ex-css')
 
-    <style>
-        body {
-            padding-top: 70px;
-        }
-    </style>
-
-    <!-- Scripts -->
+<!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
                 'csrfToken' => csrf_token(),
@@ -33,7 +28,7 @@
 {{--body--}}
 <body>
 {{--nav--}}
-@include('blog.particals.nav')
+@include('blog.particals.masthead')
 
 {{--content--}}
 @yield('content')
