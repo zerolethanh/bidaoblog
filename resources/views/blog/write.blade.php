@@ -11,7 +11,7 @@
 <script src="{{url('/blog/prism.js') }}" data-manual></script>
 <script src="{{url('/blog/vue.min.js') }}"></script>
 <script src="{{ url('blog/ace/min/ace.js') }}"></script>
-<script src="{{ url('blog/ace/min/mode-php.js') }}"></script>
+{{--<script src="{{ url('blog/ace/min/mode-php.js') }}"></script>--}}
 <script src="{{ url('blog/flatUI/js/flat-ui.min.js') }}"></script>
 @endpush
 @section('head')
@@ -91,15 +91,17 @@
 //            $('#code').html(words);
 //            Prism.highlightAll();
         });
+
+        var editor = ace.edit("editor");
+        editor.getSession().setMode("ace/mode/php");
+
+
         $('#coder_lang_select').change(function (e) {
             var lang = $('#coder_lang_select :selected').text();
             editor.getSession().setMode("ace/mode/" + lang);
         });
         //        Prism.highlightAll();
 
-        var editor = ace.edit("editor");
-        //        editor.setTheme("ace/theme/twilight");
-        //        editor.getSession().setMode("ace/mode/javascript");
 
     </script>
 @endsection
