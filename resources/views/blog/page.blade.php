@@ -12,10 +12,19 @@
     <title>{{ config('app.name', 'BiDaoBlog') }}</title>
 
     <!-- Styles -->
-    @include('commons.css.bootstrap')
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"--}}
+          {{--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">--}}
+
+    {{--@include('commons.css.bootstrap')--}}
     <link rel="stylesheet" href="{{ url('/blog/blog.css') }}">
 
-@yield('ex-css')
+    @yield('ex-css')
+    @yield('head')
 
 <!-- Scripts -->
     <script>
@@ -24,6 +33,7 @@
         ]); ?>
     </script>
 
+    @stack('stylesheets')
 </head>
 {{--body--}}
 <body>
@@ -34,13 +44,24 @@
 @yield('content')
 
 <!-- Scripts -->
-@include('commons.js.jquery')
-@include('commons.js.bootstrap')
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+@stack('scripts')
+
 @yield('ex-js')
 
 <script>
     @yield('ex-plain-js')
 </script>
+
+@yield('vue')
+
+
 </body>
-{{--body END--}}
+
 </html>
