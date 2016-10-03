@@ -22,7 +22,7 @@
           {{--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">--}}
 
     {{--@include('commons.css.bootstrap')--}}
-    <link rel="stylesheet" href="{{ url('/blog/blog.css') }}">
+    <link rel="stylesheet" href="{{ url('blog.css') }}">
 
     @yield('head')
 
