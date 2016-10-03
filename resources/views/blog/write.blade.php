@@ -38,7 +38,9 @@
             </div>
 
         </div>
+
     </div>
 
-    {{--@include('commons.disqus')--}}
+    @include('blog.particals.footer')
+
 @endsection

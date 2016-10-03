@@ -18,10 +18,10 @@
         </div>
 
 
-        {{--        @include('commons.disqus')--}}
+                @include('commons.disqus')
 
     <!-- Footer -->
-        {{--@include('blog.particals.footer')--}}
+        @include('blog.particals.footer')
 
     </div>
 
