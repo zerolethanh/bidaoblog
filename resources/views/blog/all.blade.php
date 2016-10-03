@@ -33,10 +33,6 @@
         {{--{{ dd() }}--}}
         {{--        @include('commons.disqus')--}}
 
-    <!-- Footer -->
-        @include('blog.particals.footer')
-
     </div>
-
 
 @endsection

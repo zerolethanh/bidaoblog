@@ -16,13 +16,6 @@
                 @include('blog.particals.sidebar')
             </div>
         </div>
-
-
-                @include('commons.disqus')
-
-    <!-- Footer -->
-        @include('blog.particals.footer')
-
+        @include('commons.disqus')
     </div>
-
 @endsection
