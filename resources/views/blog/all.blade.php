@@ -1,5 +1,6 @@
 @extends('blog.page')
 
+@include('blog.particals.flatUI')
 @section('content')
 
     <div class="container">
@@ -33,7 +34,7 @@
         {{--        @include('commons.disqus')--}}
 
     <!-- Footer -->
-        {{--@include('blog.particals.footer')--}}
+        @include('blog.particals.footer')
 
     </div>
 

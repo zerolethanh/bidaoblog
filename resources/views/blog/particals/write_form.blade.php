@@ -29,13 +29,15 @@
     </div>
 
     <button type="submit" class="btn btn-info col-md-offset-2">SAVE</button>
+    <a class="btn btn-danger" id="preview_button" style="margin-left: 10px">Preview</a>
 
 </form>
-<div class="row" style="padding-bottom: 10px">
-    <div class="col-md-offset-2">
-        <button class="btn btn-danger" id="preview_button" style="margin-left: 10px">Preview</button>
-        <button class="btn btn-default" id="show_hide_coder_button" style="margin-left: 10px">show_hide_coder_button
-        </button>
-    </div>
-</div>
+
+{{--<div class="row" style="padding-bottom: 10px">--}}
+    {{--<div class="col-md-offset-2">--}}
+        {{--<button class="btn btn-danger" id="preview_button" style="margin-left: 10px">Preview</button>--}}
+        {{--<button class="btn btn-default" id="show_hide_coder_button" style="margin-left: 10px">show_hide_coder_button--}}
+        {{--</button>--}}
+    {{--</div>--}}
+{{--</div>--}}
 

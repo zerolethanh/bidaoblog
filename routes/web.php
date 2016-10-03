@@ -12,21 +12,20 @@
 */
 
 Route::get('/', function () {
-//    return view('welcome');
-    return view('homepage.index');
+    return redirect('blogs');
 });
 
 
-Route::get('config', function () {
+//Route::get('config', function () {
 //    return config()->all();
-    return app()->version();
-});
+//    return app()->version();
+//});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::group(['prefix' => 'homepage'], function () {
-    Route::get('{view?}', 'HomePageController@view');
-});
+//Route::get('/home', 'HomeController@index');
+//Route::group(['prefix' => 'homepage'], function () {
+//    Route::get('{view?}', 'HomePageController@view');
+//});
 
 Route::get('blogs', 'BlogController@all');
 Route::group(['prefix' => 'blog'], function () {

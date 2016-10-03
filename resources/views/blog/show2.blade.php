@@ -1,5 +1,5 @@
 @extends('blog.page')
-
+@include('blog.particals.flatUI')
 @section('content')
 
     <div class="container">
