@@ -1,14 +1,8 @@
 <div class="blog-post">
-    <h1 class="blog-post-title"> {{ $blog->title }}</h1>
+    <h1 class="blog-post-title"><a href="{{$blog->link}}"> {{ $blog->title }}</a></h1>
     <p class="blog-post-meta"> {{ $blog->created_at }}</p>
     <div>
-        <!--        --><?php
-        //        $body = htmlspecialchars(nl2br($blog->body), ENT_QUOTES);
-        //        $body = str_replace('&lt;br /&gt;', '<br />', $body);
-        //        echo $body;
-        //        ?>
-
-        {!! nl2br($blog->body) !!}
+        {{ nl2br(str_limit($blog->body, 150)) }}
     </div>
     <hr>
 </div>
