@@ -2,7 +2,10 @@
 
     <p class="blog-post-meta"> {{ $blog->created_at }}</p>
 
-    <div>
-        {!! nl2br($blog->body) !!}
+    <div class="blog-post-body">
+        <?php
+        $body = $blog->body;
+        ?>
+        @markdown($body)
     </div>
 </div>

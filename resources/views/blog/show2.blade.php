@@ -1,5 +1,12 @@
 @extends('blog.page')
 @include('blog.particals.flatUI')
+@push('stylesheets')
+<link href=" {{url("blog/prism.css")}} " rel="stylesheet" />
+@endpush
+@push('scripts')
+<script src="{{url("blog/prism.js") }}"></script>
+@endpush
+
 @section('content')
 
     <div class="container">
@@ -8,7 +15,6 @@
 
         <div class="row">
             <div class="col-sm-8 blog-main">
-
                 @include('blog.particals.post4only1')
             </div>
 

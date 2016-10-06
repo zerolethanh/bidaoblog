@@ -7,13 +7,13 @@ if (!isset($blogs)) {
 
 <div class="sidebar-module">
 
-    <ol>
+    <ul class="list-unstyled">
         @foreach($blogs as $blog)
             <li>
-                <a href="{{$blog->link}}">{{$blog->title}}</a>
+               {{ $blog->id }} .  <a href="{{$blog->link}}">{{ $blog->title }} </a>
             </li>
         @endforeach
-    </ol>
+    </ul>
 
     <div class="text-center">
         {{ $blogs->appends(['id' => request('id')])->links() }}

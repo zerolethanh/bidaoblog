@@ -67,6 +67,6 @@ class Blog extends Model
 
     public function getLinktitleAttribute()
     {
-        return str_replace([' ', '/', '?', '=', '&', '\\'], '-', $this->title); // Replaces all spaces with hyphens.
+        return str_replace([' ', '/', '?', '=', '&', '\\', '#'], '-', $this->title); // Replaces all spaces with hyphens.
     }
 }

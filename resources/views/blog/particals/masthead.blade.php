@@ -6,7 +6,7 @@ function requestIs($uri)
 }
 
 ?>
-<div class="blog-masthead navbar-fixed-top">
+<div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav ">
             {{--<a class="blog-nav-item {{ requestIs('home') }}" href="{{ url('home') }}">Home</a>--}}
