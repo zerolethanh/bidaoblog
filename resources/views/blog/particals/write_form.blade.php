@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <label for="date" class="col-sm-2 control-label">Date</label>
-        <div class="col-sm-2">
+        <div class="col-sm-3">
             <input type="date" class="form-control" id="date" name="date" value="{{date('Y-m-d')}}">
         </div>
     </div>
