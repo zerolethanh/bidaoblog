@@ -14,11 +14,11 @@
         @include('blog.particals.header')
 
         <div class="row">
-            <div class="col-sm-8 blog-main">
+            <div class="col-sm-9 blog-main">
                 @include('blog.particals.post4only1')
             </div>
 
-            <div class="col-sm-4 blog-sidebar">
+            <div class="col-sm-3 blog-sidebar">
                 @include('blog.particals.sidebar')
             </div>
         </div>

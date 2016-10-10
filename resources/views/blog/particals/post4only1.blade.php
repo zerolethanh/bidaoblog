@@ -1,6 +1,6 @@
 <div class="blog-post">
 
-    <p class="blog-post-meta"> {{ $blog->created_at }}</p>
+    {{--<p class="blog-post-meta"> {{ $blog->created_at }}</p>--}}
 
     <div class="blog-post-body">
         <?php

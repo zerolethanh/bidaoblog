@@ -9,12 +9,12 @@
 
         <div class="row">
 
-            <div class="col-sm-8 blog-main">
+            <div class="col-sm-9 blog-main">
                 @each('blog.particals.post',$blogs,'blog')
                 @include('blog.particals.pager')
             </div>
 
-            <div class="col-sm-4 blog-sidebar">
+            <div class="col-sm-3 blog-sidebar">
                 @include('blog.particals.sidebar')
             </div>
 

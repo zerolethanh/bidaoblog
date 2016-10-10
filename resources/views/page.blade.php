@@ -14,7 +14,6 @@
     @stack('stylesheets')
     <link rel="stylesheet" href="{{ url('blog.css') }}">
 
-    @yield('head')
     <script>
         window.Laravel = <?php echo json_encode([
                 'csrfToken' => csrf_token(),

@@ -35,6 +35,8 @@ Route::group(['prefix' => 'blog'], function () {
     Route::get('{Y?}/{m?}/{d?}/{title?}', 'BlogController@show');
 });
 
+Route::get('password-gen','PasswordGen@index');
+
 Route::group(['prefix' => 'vn'], function () {
     Route::get('/', 'VnController@index');
 
