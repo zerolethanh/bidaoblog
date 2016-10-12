@@ -13,7 +13,6 @@
     {{--<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/latest/styles/github.min.css">--}}
     @stack('stylesheets')
     <link rel="stylesheet" href="{{ url('blog.css') }}">
-
     @yield('head')
     <script>
         window.Laravel = <?php echo json_encode([

@@ -10,7 +10,7 @@ if (!isset($blogs)) {
     <ul class="list-unstyled">
         @foreach($blogs as $blog)
             <li>
-               {{ $blog->id }} .  <a href="{{$blog->link}}">{{ $blog->title }} </a>
+               {{ $blog->id }}.  <a href="{{$blog->link}}">{{ $blog->title }} </a>
             </li>
         @endforeach
     </ul>
