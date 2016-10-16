@@ -21,9 +21,6 @@ bootstrap/cache/
 
 .gitignore
 .run
-app/Http/Controllers/JpController.php
-app/Http/Controllers/VnController.php
-app/Policies/
 npm-debug.log
 public/blog/ace/
 public/blog/flatUI/
