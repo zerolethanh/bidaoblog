@@ -8,6 +8,8 @@ Homestead.yaml
 ### Laravel template
 vendor/
 node_modules/
+/storage
+!/storage/app
 
 # Laravel 5 & Lumen specific
 bootstrap/cache/
@@ -19,3 +21,9 @@ bootstrap/cache/
 
 .gitignore
 .run
+app/Http/Controllers/JpController.php
+app/Http/Controllers/VnController.php
+app/Policies/
+npm-debug.log
+public/blog/ace/
+public/blog/flatUI/
