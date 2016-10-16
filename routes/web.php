@@ -28,12 +28,14 @@ Auth::routes();
 //});
 
 Route::get('blogs', 'BlogController@all');
+
 Route::group(['prefix' => 'blog'], function () {
     Route::get('write', 'BlogController@write');
     Route::post('save', 'BlogController@save');
     Route::get('all', 'BlogController@all');
     Route::get('edit/{id}', 'BlogController@edit');
     Route::post('edit/{id}', 'BlogController@edit_save');
+    Route::get('{id}','BlogController@showId');
     Route::get('{Y?}/{m?}/{d?}/{title?}', 'BlogController@show');
 });
 

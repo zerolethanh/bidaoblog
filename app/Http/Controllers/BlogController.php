@@ -46,7 +46,12 @@ class BlogController extends Controller
             return view('blog.show2', compact('blog'));
         }
         return redirect('blogs');
+    }
 
+    public function showId($id)
+    {
+        $blog = Blog::find($id);
+        return view('blog.show2', compact('blog'));
     }
 
     public function edit($id)
@@ -61,9 +66,8 @@ class BlogController extends Controller
     {
         list($Y, $m, $d) = Blog::parseYmd(request('date'));
         $data = array_merge(request()->all(), compact('Y', 'm', 'd'));
-        dd($data);
 
         Blog::findOrFail($id)->update($data);
-        return redirect('blogs');
+        return redirect("blog/$id");
     }
 }
