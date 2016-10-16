@@ -1,5 +1,5 @@
 @extends('blog.page')
-@include('blog.particals.flatUI')
+{{--@include('blog.particals.flatUI')--}}
 @push('stylesheets')
 <link href=" {{url("blog/prism.css")}} " rel="stylesheet" />
 @endpush

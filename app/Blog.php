@@ -2,13 +2,22 @@
 
 namespace App;
 
+use App\Scopes\AuthScope;
 use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
     //
-    protected $fillable = ['Y', 'm', 'd', 'date', 'title', 'body'];
-    protected $hidden = ['linktitle'];
+    protected $fillable = ['user_id', 'Y', 'm', 'd', 'date', 'title', 'body'];
+
+//    protected $hidden = ['linktitle'];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new AuthScope);
+    }
 
     public static function parseYmd($date)
     {

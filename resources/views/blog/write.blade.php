@@ -13,7 +13,7 @@
 </style>
 @endpush
 
-@include('blog.particals.flatUI')
+{{--@include('blog.particals.flatUI')--}}
 
 @section('content')
     <div class="container-fluid">

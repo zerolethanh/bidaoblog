@@ -15,12 +15,12 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedSmallInteger('Y');
             $table->unsignedTinyInteger('m');
             $table->unsignedTinyInteger('d');
             $table->date('date');
             $table->text('title');
-//            $table->text('linktitle')->nullable();
             $table->text('body');
             $table->timestamps();
         });

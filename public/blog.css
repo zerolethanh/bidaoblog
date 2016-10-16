@@ -3,7 +3,8 @@
  */
 
 body {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    /*font-family: Georgia, "Times New Roman", Times, serif;*/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #555;
 }
 
@@ -81,6 +82,7 @@ h6, .h6 {
     padding-top: 10px;
     /*background: greenyellow*/
 }
+
 .blog-header-for-all {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -187,6 +189,7 @@ img {
 h1, .h1 {
     font-size: 50px;
 }
+
 h2, .h2 {
     font-size: 45px;
 }
@@ -198,10 +201,19 @@ h3, .h3 {
 h4, .h4 {
     font-size: 35px;
 }
+
 h5, .h5 {
     font-size: 30px;
 }
+
 h6, .h6 {
     font-size: 25px;
 }
 
+.nav.navbar-nav li a {
+    color: floralwhite;
+}
+
+#user_menu li a {
+    color: black;
+}
