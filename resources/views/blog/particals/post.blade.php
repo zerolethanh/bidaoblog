@@ -4,9 +4,11 @@
     <div class="blog-post-body">
         <?php
         //show first 5 lines in post body
-        $body = htmlspecialchars(implode(PHP_EOL, array_slice(explode(PHP_EOL, $blog->body), 0, 5)), ENT_NOQUOTES);
+        $body = implode(PHP_EOL, array_slice(explode(PHP_EOL, $blog->body), 0, 5));
+        $body = markdown($body);
+        echo $body;
         ?>
-        @markdown( $body )
+        {{--@markdown( $body )--}}
     </div>
     @can('edit',$blog)
         <button class="btn btn-warning" onclick="location.href='{{ url('/blog/edit/'.$blog->id) }}'">Edit</button>
