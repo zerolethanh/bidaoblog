@@ -79,13 +79,13 @@ h6, .h6 {
  */
 
 .blog-header {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     /*background: greenyellow*/
 }
 
 .blog-header-for-all {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
 }
 
 .blog-title {
@@ -149,11 +149,11 @@ h6, .h6 {
  */
 
 .blog-post {
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
 }
 
 .blog-post-title {
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     /*margin-bottom: 5px;*/
     font-size: 30px;
 }
