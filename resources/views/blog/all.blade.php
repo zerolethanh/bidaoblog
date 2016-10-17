@@ -5,7 +5,7 @@
 
     <div class="container">
 
-        @include('blog.particals.headerForAll')
+        {{--@include('blog.particals.headerForAll')--}}
 
         <div class="row">
 

@@ -5,14 +5,15 @@
         <?php
         //show first 5 lines in post body
         $body = implode(PHP_EOL, array_slice(explode(PHP_EOL, $blog->body), 0, 5));
-        $body = markdown($body);
-        echo $body;
+        echo markdown($body);
         ?>
-        {{--@markdown( $body )--}}
     </div>
-    @can('edit',$blog)
-        <button class="btn btn-warning" onclick="location.href='{{ url('/blog/edit/'.$blog->id) }}'">Edit</button>
-    @endcan
+    <div class="row">
+        <a class="btn btn-warning" href="{{$blog->link}}" class="pull-left" style="margin-left: 12px">Read more...</a>
+        @can('edit',$blog)
+            <a href="{{ url('/blog/edit/'.$blog->id) }}" class="pull-right">Edit</a>
+        @endcan
+    </div>
     <hr>
 </div>
 {{--@push('end-scripts')--}}
