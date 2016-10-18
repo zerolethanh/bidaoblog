@@ -3,7 +3,7 @@
 {{--@include('blog.particals.flatUI')--}}
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
 
         {{--@include('blog.particals.headerForAll')--}}
 

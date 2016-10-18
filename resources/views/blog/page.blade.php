@@ -13,6 +13,8 @@
     @stack('stylesheets')
     @stack('css')
     <link rel="stylesheet" href="{{ url('blog.css') }}">
+    <link rel="stylesheet" href="{{ url('blog/simple-sidebar.css') }}">
+
     {{--    @yield('head')--}}
     <script>
         window.Laravel = <?php echo json_encode([
@@ -22,9 +24,39 @@
 </head>
 <body>
 
+<div id="wrapper">
+
 @include('blog.particals.masthead')
-@yield('content')
-@include('blog.particals.footer')
+<!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            {{--<li class="sidebar-brand">--}}
+            {{--<a href="#">--}}
+            {{--Start Bootstrap--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            <li>
+                <a href="/blogs">Blog</a>
+            </li>
+            <li>
+                <a href="/blog/write">Write</a>
+            </li>
+            <li>
+                <a href="/password-gen">Password-Gen</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        @yield('content')
+        @include('blog.particals.footer')
+
+    </div>
+
+</div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -33,5 +65,12 @@
 
 @stack('scripts')
 @stack('end-scripts')
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 </body>
 </html>

@@ -5,16 +5,13 @@ function requestIs($uri)
 }
 
 ?>
-@push('css')
-<style>
-    .nav.navbar-nav li a{
-        color: red;
-    }
-</style>
-@endpush
+
 <nav class="navbar navbar-default navbar-static-top blog-masthead blog-nav">
     <div class="container">
         <div class="navbar-header">
+            <button class="navbar-toggler" type="button" aria-expanded="false" id="menu-toggle">
+                &#9776;
+            </button>
 
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
