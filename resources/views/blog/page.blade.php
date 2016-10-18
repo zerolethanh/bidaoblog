@@ -26,15 +26,12 @@
 
 <div id="wrapper">
 
-@include('blog.particals.masthead')
-<!-- Sidebar -->
+    <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            {{--<li class="sidebar-brand">--}}
-            {{--<a href="#">--}}
-            {{--Start Bootstrap--}}
-            {{--</a>--}}
-            {{--</li>--}}
+            <li class="sidebar-brand">
+                <a href="#">Bi.Katana Blog</a>
+            </li>
             <li>
                 <a href="/blogs">Blog</a>
             </li>
@@ -49,6 +46,7 @@
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
+        @include('blog.particals.masthead')
 
         @yield('content')
         @include('blog.particals.footer')
@@ -67,7 +65,7 @@
 @stack('end-scripts')
 <!-- Menu Toggle Script -->
 <script>
-    $("#menu-toggle").click(function(e) {
+    $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
