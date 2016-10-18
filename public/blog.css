@@ -219,7 +219,8 @@ h6, .h6 {
 }
 
 .navbar-toggler {
-    margin-top: 8px;
+    margin: 8px;
+    width: 50px;
     padding: 1rem 1rem;
     font-size: 1.25rem;
     line-height: 1;

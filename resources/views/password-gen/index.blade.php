@@ -1,4 +1,4 @@
-@extends('page')
+@extends('blog.page')
 
 {{--@include('blog.particals.flatUI')--}}
 
