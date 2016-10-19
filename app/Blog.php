@@ -61,7 +61,8 @@ class Blog extends Model
 
     public function getLinkAttribute()
     {
-        return url("blog/{$this['Y']}/{$this['m']}/{$this['d']}/" . $this->linktitle . "?id={$this['id']}");
+//        return url("blog/{$this['Y']}/{$this['m']}/{$this['d']}/" . $this->linktitle . "?id={$this['id']}");
+        return url("blogs/$this->id");
     }
 
 //    public function makeLinkTitle()

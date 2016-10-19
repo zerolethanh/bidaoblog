@@ -7,34 +7,30 @@ function requestIs($uri)
 ?>
 
 <nav class="navbar navbar-default navbar-static-top blog-masthead blog-nav">
+    <div class="navbar-header">
+        <button class="navbar-toggler pull-left" type="button" aria-expanded="false" id="menu-toggle">
+            ☰
+        </button>
+
+        <!-- Collapsed Hamburger -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Branding Image -->
+    </div>
     <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggler" type="button" aria-expanded="false" id="menu-toggle">
-                &#9776;
-            </button>
-
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#app-navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Branding Image -->
-            {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
-            {{--{{ config('app.name', 'Laravel') }}--}}
-            {{--</a>--}}
-        </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
-                <li><a class="blog-nav-item {{ requestIs('blogs') }}" href="{{url('blogs')}}">Blogs</a></li>
-                <li><a class="blog-nav-item {{ requestIs('blog/write') }}" href="{{ url('blog/write') }}">Write</a></li>
-                <li><a class="blog-nav-item {{ requestIs('password-gen') }}" href="{{ url('password-gen') }}">Password-Gen</a>
-                </li>
-            </ul>
+            {{--<ul class="nav navbar-nav">--}}
+                {{--<li><a class="blog-nav-item {{ requestIs('blogs') }}" href="{{url('blogs')}}">Blogs</a></li>--}}
+                {{--<li><a class="blog-nav-item {{ requestIs('blog/write') }}" href="{{ url('blog/write') }}">Write</a></li>--}}
+                {{--<li><a class="blog-nav-item {{ requestIs('password-gen') }}" href="{{ url('password-gen') }}">Password-Gen</a>--}}
+                {{--</li>--}}
+            {{--</ul>--}}
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">

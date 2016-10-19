@@ -16,6 +16,13 @@ class BlogController extends Controller
     /*
      * new blog
      */
+    public $ajax = false;
+
+    public function __construct()
+    {
+        $this->ajax = request()->ajax();
+    }
+
     public function write()
     {
         return view('blog.write');
@@ -26,15 +33,18 @@ class BlogController extends Controller
         list($Y, $m, $d) = Blog::parseYmd(request('date'));
         $data = array_merge(
             request()->all(),
-            compact('Y', 'm', 'd'),
-            ['user_id' => Auth::id()]
+            compact('Y', 'm', 'd')
         );
         Blog::create($data);
         return back();
     }
 
-    public function all()
+    public function all($id = null)
     {
+        if ($id) {
+            $blog = Blog::findOrFail($id);
+            return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
+        }
         $blogs = Blog::latest()->simplePaginate();
         return view('blog.all', compact('blogs'));
     }
@@ -42,16 +52,24 @@ class BlogController extends Controller
     public function show($Y = null, $m = null, $d = null, $title = null)
     {
         if ($id = request('id')) {
-            $blog = Blog::find($id);
-            return view('blog.show2', compact('blog'));
+            $blog = Blog::findOrFail($id);
+            return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
         }
         return redirect('blogs');
     }
 
     public function showId($id)
     {
-        $blog = Blog::find($id);
-        return view('blog.show2', compact('blog'));
+        $blog = Blog::findOrFail($id);
+        return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
+    }
+
+    public function showJsonIfAjax($blog)
+    {
+        if ($this->ajax) {
+            $blog->body = markdown($blog->body);
+            return $blog;
+        }
     }
 
     public function edit($id)

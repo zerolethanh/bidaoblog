@@ -2,7 +2,7 @@
 
     {{--<p class="blog-post-meta"> {{ $blog->created_at }}</p>--}}
 
-    <div class="blog-post-body">
+    <div class="blog-post-body" id="blog-post-body">
         <?php
         $body = $blog->body;
         ?>

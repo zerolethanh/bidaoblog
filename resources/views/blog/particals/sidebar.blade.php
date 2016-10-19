@@ -5,7 +5,7 @@ if (!isset($blogs)) {
 }
 ?>
 
-<div class="sidebar-module">
+<div class="sidebar-module" id="sidebar-module">
 
     {{--<ul class="list-unstyled">--}}
     <table class="table">
@@ -17,7 +17,7 @@ if (!isset($blogs)) {
         <tbody>
         @foreach($blogs as $blog)
             <tr>
-                <td><a href="{{$blog->link}}">{{ $blog->title }} </a></td>
+                <td><a href="{{$blog->link}}" onclick="show_post()">{{ $blog->title }} </a></td>
             </tr>
         </tbody>
         @endforeach
@@ -27,3 +27,25 @@ if (!isset($blogs)) {
         {{ $blogs->appends(['id' => request('id')])->links() }}
     </div>
 </div>
+
+@push('end-scripts')
+<script>
+    function show_post() {
+        if (!location.pathname.match('/blogs')) {
+            event.preventDefault();
+
+            $.get(event.target.href).success(
+                    function (res) {
+//                        console.log(res);
+                        $('#blog-title').html(res.title);
+                        $('#blog-post-body').html(res.body);
+                        $('html,body').animate({
+                            scrollTop: 0
+                        }, 100);
+                    })
+        }
+
+    }
+
+</script>
+@endpush

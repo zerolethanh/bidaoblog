@@ -9,6 +9,7 @@ namespace App\Observers;
 
 
 use App\Blog;
+use Auth;
 
 class BlogObservers
 {
@@ -28,5 +29,8 @@ class BlogObservers
 
     public function creating(Blog $blog)
     {
+        $blog->user_id = Auth::id();
+//        ['user_id' => Auth::id()]
+
     }
 }

@@ -27,7 +27,7 @@ Auth::routes();
 //    Route::get('{view?}', 'HomePageController@view');
 //});
 
-Route::get('blogs', 'BlogController@all');
+Route::get('blogs/{id?}', 'BlogController@all');
 
 Route::group(['prefix' => 'blog'], function () {
     Route::get('write', 'BlogController@write');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'blog'], function () {
     Route::get('all', 'BlogController@all');
     Route::get('edit/{id}', 'BlogController@edit');
     Route::post('edit/{id}', 'BlogController@edit_save');
-    Route::get('{id}','BlogController@showId');
+    Route::get('{id}', 'BlogController@showId');
     Route::get('{Y?}/{m?}/{d?}/{title?}', 'BlogController@show');
 });
 
