@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Scopes\AuthScope;
+use App\Scopes\BlogScope;
 use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
@@ -12,11 +13,15 @@ class Blog extends Model
 
 //    protected $hidden = ['linktitle'];
 
+    static $PUBLIC = 1;
+
     protected static function boot()
     {
         parent::boot();
 
-        static::addGlobalScope(new AuthScope);
+//        static::addGlobalScope(new AuthScope);
+//        static::addGlobalScope(new BlogScope);
+
     }
 
     public static function parseYmd($date)
@@ -49,6 +54,11 @@ class Blog extends Model
     public function scopeLinktitle($q, $linktitle = null)
     {
         return $linktitle ? $q->where('linktitle', $linktitle) : $q;
+    }
+
+    public function scopePublic($q)
+    {
+        return $q->where('scope', static::$PUBLIC);
     }
 
     static public function addLink(&$blogs)

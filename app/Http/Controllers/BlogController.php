@@ -36,7 +36,7 @@ class BlogController extends Controller
             $blog = Blog::findOrFail($id);
             return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
         }
-        $blogs = Blog::latest()->simplePaginate();
+        $blogs = Blog::latest()->public()->simplePaginate();
         return view('blog.all', compact('blogs'));
     }
 
