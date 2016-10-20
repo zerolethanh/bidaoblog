@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-    /*
-     * new blog
-     */
-    public $ajax = false;
-
-    public function __construct()
-    {
-        $this->ajax = request()->ajax();
-    }
 
     public function write()
     {
@@ -66,7 +57,7 @@ class BlogController extends Controller
 
     public function showJsonIfAjax($blog)
     {
-        if ($this->ajax) {
+        if (IS_AJAX) {
             $blog->body = markdown($blog->body);
             return $blog;
         }

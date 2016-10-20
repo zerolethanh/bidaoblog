@@ -9,11 +9,13 @@
     <title>{{ config('app.name', 'BiBlog') }}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <!-- Optional theme -->
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"--}}
+          {{--integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">--}}
     @stack('stylesheets')
     @stack('css')
     <link rel="stylesheet" href="{{ url('blog.css') }}">
-    <link rel="stylesheet" href="{{ url('blog/simple-sidebar.css') }}">
+    {{--<link rel="stylesheet" href="{{ url('blog/simple-sidebar.css') }}">--}}
 
     {{--    @yield('head')--}}
     <script>
@@ -24,36 +26,35 @@
 </head>
 <body>
 
-<div id="wrapper">
+{{--<div id="wrapper">--}}
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">Bi.Katana Blog</a>
-            </li>
-            <li>
-                <a href="/blogs">Blog</a>
-            </li>
-            <li>
-                <a href="/blog/write">Write</a>
-            </li>
-            <li>
-                <a href="/password-gen">Password-Gen</a>
-            </li>
-        </ul>
-    </div>
+    {{--<div id="sidebar-wrapper">--}}
+        {{--<ul class="sidebar-nav">--}}
+            {{--<li class="sidebar-brand">--}}
+                {{--<a href="#">Bi.Katana Blog</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="/blogs">Blog</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="/blog/write">Write</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+                {{--<a href="/password-gen">Password-Gen</a>--}}
+            {{--</li>--}}
+        {{--</ul>--}}
+    {{--</div>--}}
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
-    <div id="page-content-wrapper">
+    {{--<div id="page-content-wrapper">--}}
         @include('blog.particals.masthead')
-
         @yield('content')
-        @include('blog.particals.footer')
+{{--        @include('blog.particals.footer')--}}
 
-    </div>
+    {{--</div>--}}
 
-</div>
+{{--</div>--}}
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

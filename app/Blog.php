@@ -65,6 +65,17 @@ class Blog extends Model
         return url("blogs/$this->id");
     }
 
+    public function getHeadContentAttribute()
+    {
+        return markdown(implode(PHP_EOL, array_slice(explode(PHP_EOL, $this->body), 0, 5)));
+//        return mb_strcut($this->body, 0, 100);
+    }
+
+    public function getBodyHtmlAttribute()
+    {
+        return markdown($this->body);
+    }
+
 //    public function makeLinkTitle()
 //    {
 //        $this->linktitle = $this->linktitle();

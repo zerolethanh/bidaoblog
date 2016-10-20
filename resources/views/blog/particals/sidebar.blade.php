@@ -33,7 +33,6 @@ if (!isset($blogs)) {
     function show_post() {
         if (!location.pathname.match('/blogs')) {
             event.preventDefault();
-
             $.get(event.target.href).success(
                     function (res) {
 //                        console.log(res);

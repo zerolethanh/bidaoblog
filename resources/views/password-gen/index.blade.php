@@ -20,13 +20,13 @@
 
             <div class="form-group">
                 <label for="len" class="col-sm-2 control-label">Password Length: </label>
-                <div class="col-sm-2">
+                <div class="col-sm-10">
                     <input type="number" class="col-sm-10 form-control " name="len" id="len" value="20">
                 </div>
             </div>
-            <br><br><br>
+
             <div class="form-group">
-                <div class="col-sm-offset-2">
+                <div class="col-sm-offset-2" style="padding: 0 13px 0 13px">
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="l" id="l" checked> abcdefghjkmnpqrstuvwxyz
