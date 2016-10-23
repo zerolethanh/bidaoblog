@@ -9,10 +9,10 @@ function requestIs($uri)
 <nav class="navbar navbar-default navbar-static-top blog-masthead blog-nav">
 
     <div class="navbar-header">
-        {{--<button class="navbar-toggler pull-left" type="button" aria-expanded="false" id="menu-toggle">--}}
-            {{--☰--}}
-        {{--</button>--}}
-        <!-- Collapsed Hamburger -->
+    {{--<button class="navbar-toggler pull-left" type="button" aria-expanded="false" id="menu-toggle">--}}
+    {{--☰--}}
+    {{--</button>--}}
+    <!-- Collapsed Hamburger -->
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -28,8 +28,22 @@ function requestIs($uri)
             <ul class="nav navbar-nav">
                 <li><a class="blog-nav-item {{ requestIs('blogs') }}" href="{{url('blogs')}}">Blogs</a></li>
                 <li><a class="blog-nav-item {{ requestIs('blog/write') }}" href="{{ url('blog/write') }}">Write</a></li>
-                <li><a class="blog-nav-item {{ requestIs('password-gen') }}" href="{{ url('password-gen') }}">Password-Gen</a>
-                </li>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tools<span
+                                    class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu" id="Tools">
+                            <li>
+                                <a href="{{ url('password-gen') }}">Password-Gen</a>
+                                <a href="{{ url('tesseract') }}">Tesseract</a>
+                            </li>
+                        </ul>
+
+
+                    </li>
+                </ul>
+
             </ul>
 
             <!-- Right Side Of Navbar -->

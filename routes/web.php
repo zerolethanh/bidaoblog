@@ -41,11 +41,19 @@ Route::group(['prefix' => 'blog'], function () {
 
 Route::get('password-gen', 'PasswordGen@index');
 
+Route::get('upload', 'UploadController@index');
+Route::post('upload', 'UploadController@save');
+
+Route::get('tesseract','TesseractController@showUploadImageForm');
+Route::group(['prefix' => 'tesseract'], function () {
+    Route::get('form', 'TesseractController@showUploadImageForm');
+    Route::post('save', 'TesseractController@saveImage');
+});
+
 Route::group(['prefix' => 'vn'], function () {
     Route::get('/', 'VnController@index');
 
 });
 Route::group(['prefix' => 'jp'], function () {
     Route::get('/', 'JpController@index');
-
 });

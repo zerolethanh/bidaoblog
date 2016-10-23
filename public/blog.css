@@ -234,3 +234,7 @@ h6, .h6 {
     border: 1px solid transparent;
     border-radius: 0.25rem;
 }
+
+.dropdown-menu li a {
+    color: black !important;
+}

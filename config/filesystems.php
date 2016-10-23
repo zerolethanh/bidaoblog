@@ -56,10 +56,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'key' => 'AKIAIFQC7VAPDTEOZMBA',
+            'secret' => 'QKhnSSgBbkIi8xWV3dyZsz6dD1XmqkFSZO0eaAaA',
+            'region' => 'ap-northeast-1',
+            'bucket' => 'bidaoblog',
         ],
 
     ],
