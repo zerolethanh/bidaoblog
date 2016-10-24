@@ -100,4 +100,14 @@ class Blog extends Model
     {
         return str_replace([' ', '/', '?', '=', '&', '\\', '#'], '-', $this->title); // Replaces all spaces with hyphens.
     }
+
+    static function createFromRequest()
+    {
+        list($Y, $m, $d) = Blog::parseYmd(request('date'));
+        $data = array_merge(
+            request()->all(),
+            compact('Y', 'm', 'd')
+        );
+        return static::create($data);
+    }
 }

@@ -25,9 +25,15 @@
             </div>
             {{-- sm 4 --}}
             {{--<div class="col-sm-4">--}}
-                {{--@include('blog.particals.bloglist')--}}
+            {{--@include('blog.particals.bloglist')--}}
             {{--</div>--}}
         </div>
     </div>
 @endsection
 
+
+@push('end-scripts')
+<script>
+    document.title = "{{ $blog->title }}";
+</script>
+@endpush

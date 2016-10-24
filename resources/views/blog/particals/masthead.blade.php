@@ -1,5 +1,5 @@
 <?php
-function requestIs($uri)
+function navItemActivate($uri)
 {
     return request()->is($uri) ? ' active' : '';
 }
@@ -26,8 +26,8 @@ function requestIs($uri)
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a class="blog-nav-item {{ requestIs('blogs') }}" href="{{url('blogs')}}">Blogs</a></li>
-                <li><a class="blog-nav-item {{ requestIs('blog/write') }}" href="{{ url('blog/write') }}">Write</a></li>
+                <li><a class="blog-nav-item {{ navItemActivate('blogs') }}" href="{{url('blogs')}}">Blogs</a></li>
+                <li><a class="blog-nav-item {{ navItemActivate('blog/write') }}" href="{{ url('blog/write') }}">Write</a></li>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
 
@@ -86,16 +86,16 @@ function requestIs($uri)
 {{--<div class="blog-masthead">--}}
 {{--<div class="container">--}}
 {{--<nav class="blog-nav ">--}}
-{{--<a class="blog-nav-item {{ requestIs('home') }}" href="{{ url('home') }}">Home</a>--}}
-{{--<a class="blog-nav-item {{ requestIs('blogs') }}" href="{{url('blogs')}}">Blogs</a>--}}
-{{--<a class="blog-nav-item {{ requestIs('blog/write') }}" href="{{ url('blog/write') }}">Write</a>--}}
-{{--<a class="blog-nav-item {{ requestIs('password-gen') }}" href="{{ url('password-gen') }}">Password-Gen</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('home') }}" href="{{ url('home') }}">Home</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('blogs') }}" href="{{url('blogs')}}">Blogs</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('blog/write') }}" href="{{ url('blog/write') }}">Write</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('password-gen') }}" href="{{ url('password-gen') }}">Password-Gen</a>--}}
 {{--<a class="blog-nav-item login-button" href="/login">Login</a>--}}
 {{--<a class="blog-nav-item register-button" href="/register">Register</a>--}}
 
-{{--<a class="blog-nav-item {{ requestIs('vn') }}" href="{{url('vn')}}">VietNam</a>--}}
-{{--<a class="blog-nav-item {{ requestIs('jp') }}" href="{{url('jp')}}">Japan</a>--}}
-{{--<a class="blog-nav-item {{ requestIs('about') }}" href="{{ url('about') }}">About</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('vn') }}" href="{{url('vn')}}">VietNam</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('jp') }}" href="{{url('jp')}}">Japan</a>--}}
+{{--<a class="blog-nav-item {{ navItemActivate('about') }}" href="{{ url('about') }}">About</a>--}}
 {{--</nav>--}}
 {{--</div>--}}
 {{--</div>--}}

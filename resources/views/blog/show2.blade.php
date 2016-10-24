@@ -21,6 +21,12 @@
                 @include('blog.particals.sidebar')
             </div>
         </div>
-{{--        @include('commons.disqus')--}}
+        {{--        @include('commons.disqus')--}}
     </div>
 @endsection
+
+@push('end-scripts')
+<script>
+    document.title = "{{ $blog->title }}"
+</script>
+@endpush

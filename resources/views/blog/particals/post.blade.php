@@ -10,6 +10,13 @@
     </div>
     <hr>
 </div>
+
+@push('end-scripts')
+<script>
+    document.title = "Blogs"
+</script>
+@endpush
+
 {{--@push('end-scripts')--}}
 {{--<script>--}}
 {{--$('.blog-post-body').each(function () {--}}

@@ -21,21 +21,13 @@ class BlogController extends Controller
 
     public function save()
     {
-        list($Y, $m, $d) = Blog::parseYmd(request('date'));
-        $data = array_merge(
-            request()->all(),
-            compact('Y', 'm', 'd')
-        );
-        Blog::create($data);
-        return back();
+        $blog = Blog::createFromRequest();
+        return $this->showId($blog->id);
     }
 
     public function all($id = null)
     {
-        if ($id) {
-            $blog = Blog::findOrFail($id);
-            return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
-        }
+        if ($id) return $this->showId($id);
         $blogs = Blog::latest()->public()->simplePaginate();
         return view('blog.all', compact('blogs'));
     }

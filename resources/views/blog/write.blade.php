@@ -31,3 +31,8 @@
     </div>
 @endsection
 
+@push('end-scripts')
+<script>
+    document.title = 'Write';
+</script>
+@endpush
