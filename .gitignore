@@ -9,7 +9,6 @@ Homestead.yaml
 vendor/
 node_modules/
 /storage
-!/storage/app
 
 # Laravel 5 & Lumen specific
 bootstrap/cache/

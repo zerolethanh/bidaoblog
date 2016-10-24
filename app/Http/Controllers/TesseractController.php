@@ -38,6 +38,6 @@ class TesseractController extends Controller
                 's3url' => Storage::cloud()->url($path)
             ]);
         }
-//        return back();
+        return back();
     }
 }
