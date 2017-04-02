@@ -29,6 +29,9 @@ class BlogController extends Controller
     {
         if ($id) return $this->showId($id);
         $blogs = Blog::latest()->public()->simplePaginate();
+        if (\request()->exists('api')) {
+            return $blogs;
+        }
         return view('blog.all', compact('blogs'));
     }
 
