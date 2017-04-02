@@ -29,7 +29,7 @@ class BlogController extends Controller
     {
         if ($id) return $this->showId($id);
         $blogs = Blog::latest()->public()->simplePaginate();
-        if (\request()->exists('api')) {
+        if (NEEDS_API) {
             return $blogs;
         }
         return view('blog.all', compact('blogs'));
@@ -47,6 +47,9 @@ class BlogController extends Controller
     public function showId($id)
     {
         $blog = Blog::findOrFail($id);
+        if (NEEDS_API) {
+            return $blog;
+        }
         return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
     }
 

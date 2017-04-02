@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
         static::registerObservers();
         static::defineIS_AJAX();
         static::defineIS_MOBILE();
+        self::defineNEEDS_API();
     }
 
     static function listenDB()
@@ -57,6 +58,11 @@ class AppServiceProvider extends ServiceProvider
     static function defineIS_AJAX()
     {
         define('IS_AJAX', request()->ajax());
+    }
+
+    static function defineNEEDS_API()
+    {
+        define('NEEDS_API', request()->exists('api'));
     }
 
     static function random($prefix = null)
