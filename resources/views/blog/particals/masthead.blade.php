@@ -27,7 +27,8 @@ function navItemActivate($uri)
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a class="blog-nav-item {{ navItemActivate('blogs') }}" href="{{url('blogs')}}">Blogs</a></li>
-                <li><a class="blog-nav-item {{ navItemActivate('blog/write') }}" href="{{ url('blog/write') }}">Write</a></li>
+                <li><a class="blog-nav-item {{ navItemActivate('blog/write') }}"
+                       href="{{ url('blog/write') }}">Write</a></li>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
 
@@ -37,6 +38,7 @@ function navItemActivate($uri)
                             <li>
                                 <a href="{{ url('password-gen') }}">Password-Gen</a>
                                 <a href="{{ url('tesseract') }}">Tesseract</a>
+                                <a href="{{ url('tools/sh') }}">SH</a>
                             </li>
                         </ul>
 
