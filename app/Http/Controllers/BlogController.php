@@ -39,7 +39,7 @@ class BlogController extends Controller
     {
         if ($id = request('id')) {
             $blog = Blog::findOrFail($id);
-            return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
+            return $this->showJsonIfAjax($blog) ?: view('blog.show2', compact('blog'));
         }
         return redirect('blogs');
     }
@@ -50,7 +50,7 @@ class BlogController extends Controller
         if (NEEDS_API) {
             return $blog;
         }
-        return $this->showJsonIfAjax($blog) ?? view('blog.show2', compact('blog'));
+        return $this->showJsonIfAjax($blog) ?: view('blog.show2', compact('blog'));
     }
 
     public function showJsonIfAjax($blog)

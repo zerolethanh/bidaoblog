@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
 
     static function random($prefix = null)
     {
-        return str_repeat('-', 20) . ($prefix ?? '');//. Str::random(20);
+        return str_repeat('-', 20) . ($prefix ?: '');//. Str::random(20);
     }
 
     /**
