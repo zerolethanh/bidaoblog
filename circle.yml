@@ -1,5 +1,8 @@
 machine:
   pre:
+    - mkdir -p bootstrap/cache
+    - chmod 777 -r bootstrap/cache
+    - chmod 777 -r storage/
     - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
 
   php:
