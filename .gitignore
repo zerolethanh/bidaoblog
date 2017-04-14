@@ -14,7 +14,9 @@ node_modules/
 bootstrap/cache/
 .env.*.php
 .env.php
-
+/public/hot
+/storage/*.key
+/.vagrant
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 
