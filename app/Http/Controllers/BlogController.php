@@ -28,7 +28,7 @@ class BlogController extends Controller
     public function all($id = null)
     {
         if ($id) return $this->showId($id);
-        $blogs = Blog::latest()->public()->simplePaginate();
+        $blogs = Blog::latest()->public()->paginate();
         if (NEEDS_API) {
             return $blogs;
         }
