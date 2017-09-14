@@ -2,37 +2,38 @@
 
 @push('stylesheets')
 <style type="text/css" media="screen">
-    #editor {
-        position: relative;
-        height: 300px;
-        top: 5px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
+  #editor {
+    position: relative;
+    height: 300px;
+    top: 5px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 </style>
 @endpush
 
 {{--@include('blog.particals.flatUI')--}}
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            {{-- sm 8 --}}
-            <div class="col-sm-12" style="padding-top: 10px">
-                @include('blog.particals.write_form')
-                {{--@include('blog.particals.Coder')--}}
-            </div>
-            {{-- sm 4 --}}
-            {{--<div class="col-sm-4">--}}
-                {{--@include('blog.particals.bloglist')--}}
-            {{--</div>--}}
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-12" style="padding-top: 10px">
+        @if(auth()->user())
+          @include('blog.particals.write_form')
+        @else
+          <div class="text-center">
+            <a href="/login">LOGIN to write somethings</a>
+          </div>
+        @endif
+      </div>
     </div>
+  </div>
 @endsection
 
 @push('end-scripts')
 <script>
-    document.title = 'Write';
+  document.title = 'Write';
 </script>
 @endpush
